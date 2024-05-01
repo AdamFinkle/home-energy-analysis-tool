@@ -6,8 +6,10 @@ For an outline of the logic behind the rules engine and a glossary of common ter
 ## Development
 Simple steps for development setup:
 
-1. Create a [virtual environment](https://docs.python.org/3/library/venv.html#creating-virtual-environments) and activate it
+1. Clone the git repository.
+3. Navigate to any directory and create a [virtual environment](https://docs.python.org/3/library/venv.html#creating-virtual-environments) and activate it
+4. The following commands can be run from anywhere while the virtual environment is active
 2. `pip install -e .`
 3. `pip install -r requirements-dev.txt`
 
-Then, you should be able to run `pytest` and see tests run successfully.
+Then, you should be able to run `pytest`, also from any directory, and see tests run successfully.
