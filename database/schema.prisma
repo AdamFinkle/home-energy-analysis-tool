@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./heat.db"
+}
+
+
+model NormalizedBillingPeriodRecord {
+    id    Int       @id @default(autoincrement())
+    
+    // NormalizedBillingPeriodRecordBase (inherited)
+    // prisma does not support direct inheritance; therefore we directly coded these fields
+    period_start_date         DateTime
+    period_end_date           DateTime
+    usage                     Float
+    analysis_type_override    String // AnalysisType in NormalizedBillingPeriodRecord of pydantic_models.py
+    inclusion_override        Boolean
+    
+    // NormalizedBillingPeriodRecord
+    model_config                        String // ConfigDict in NormalizedBillingPeriodRecord of pydantic_models.py
+    analysis_type                       String // AnalysisType in NormalizedBillingPeriodRecord of pydantic_models.py
+    default_inclusion_by_calculation    Boolean
+    eliminated_as_outlier               Boolean
+    whole_home_heat_loss_rate           Float
+}
